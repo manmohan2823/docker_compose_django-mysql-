@@ -1,0 +1,41 @@
+version: '3'
+services:
+         manshdb:
+              images: mysql:latest
+              volumes: 
+                     -mansh_storage_new:/var/lib/mysql
+              restart: always
+              environment:
+                     MY_ROOT_PASSWORD: rootpasswd
+                     MY_SQL_USER:      Manmohan
+                     MY_SQL_PASSWORD:  Mansh28
+                     MY_SQL_DATABASE:  mydata 
+         
+          django:
+                 image:   django:latest
+                 restart: always
+                 depend_on:
+                        - manshdb
+                 port:
+                        - 8000:80
+                 
+                 environment:
+                        database_connection_host: manshdb
+                        database_connection_user: Manmohan
+                        database_connection__password: Mansh28
+                        database_connection_database: mydata
+
+           volumes: 
+                   -jango_storage_new:/var/www/html
+
+
+volumes
+        mansh_storage_new:
+        jango_storage_new:
+
+
+
+
+
+
+
