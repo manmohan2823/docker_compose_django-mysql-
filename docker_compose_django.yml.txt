@@ -1,3 +1,14 @@
+docker-compose project linking Django and MySQL.
+first set up the environment in RedHat by installing docker  and downloaded Django and MYSQL images frrom docker hub.
+launch the MYSQL by root acccount password=rootpasswd using environmental varibale MY_ROOT_PASSWORD , created new  Username using environmental variable MY_SQL_USER , given password of that username using MY_SQL_PASSWORD, and create own database for mysql in my local hard disk using environmental variable MY_SQL_DATABASE so that if my container terminated my database would be safe in my local hard disk, this environmental variable used here is given with MYSQL images only and then launch the container with docker run command.
+after that launch new container with docker run command using Django image downloaded from docker hub.
+configured the django when launch in new container.
+configured the apache web server used by me
+Then docker compose is launched.
+Create a directory under the docker compose and create afile with .yml extension. I also add 2 storage with two different container, for the persistent storage.
+We use docker because for this kind of services because, we can launch container in just one second. So if any technical faiure comes, we can launch another container with the same configuration using very less memory and RAM.  
+
+
 version: '3'
 services:
          manshdb:
