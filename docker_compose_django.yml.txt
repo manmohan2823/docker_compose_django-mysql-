@@ -6,7 +6,9 @@ configured the django when launch in new container.
 configured the apache web server used by me
 Then docker compose is launched.
 Create a directory under the docker compose and create afile with .yml extension. I also add 2 storage with two different container, for the persistent storage.
-We use docker because for this kind of services because, we can launch container in just one second. So if any technical faiure comes, we can launch another container with the same configuration using very less memory and RAM.  
+We use docker because for this kind of services because, we can launch container in just one second. So if any technical faiure comes, we can launch another container with the same configuration using very less memory and RAM.
+
+blog link: https://www.linkedin.com/posts/manmohan-singh-8a0b24186_righteducation-docker-vimaldaga-activity-6662960142017011712-Du 
 
 
 version: '3'
